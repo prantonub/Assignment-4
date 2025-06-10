@@ -18,7 +18,7 @@ if ( email.indexOf('@')=== -1 || email.split('@').length !== 2)
      let indexOf = email.split('@');
       let username = indexOf [0];
       let domainName = indexOf [1];
-    return `${username} sent you an email from ${domain}`;
+    return `${username} sent you an email from ${domainName}`;
 }
 
 //Problem-3
@@ -39,18 +39,18 @@ function checkDigitsInName(input){
 function calculateFinalScore(input){
     if (typeof input !== 'object' || input === null || !input.hasOwnProperty('name') || 
         !input.hasOwnProperty('testScore') || !input.hasOwnProperty('schoolGrade') || 
-        !input.hasOwnProperty('isFFamily')) {
+        !input.hasOwnProperty('isFFamily')){
         return "Invalid Input";
     }
     const { name, testScore, schoolGrade, isFFamily } = input;
     if (typeof name !== 'string' || typeof testScore !== 'number' || typeof schoolGrade !== 'number' || typeof isFFamily !== 'boolean') {
         return "Invalid Input";
     }
-    if (testScore > 50 || schoolGrade > 30 || testScore < 0 || schoolGrade < 0) {
+    if (testScore > 50 || schoolGrade > 30 || testScore < 0 || schoolGrade < 0){
         return "Invalid Input";
     }
     let finalScore = testScore + schoolGrade;
-        if (isFFamily) {
+        if (isFFamily){
         finalScore += 20;
     }
     return finalScore >= 80;
@@ -67,10 +67,5 @@ function waitingTime(interviewTimes, serialNumber) {
         {
         return 0;
     }
-
-    let totalInterviewTime = interviewTimes.reduce((sum, time) => sum + time, 0);
-    let averageTime = Math.round(totalInterviewTime / interviewedCount);
-    let waitingTime = remainingPeople * averageTime;
-    return waitingTime;
 }
 
